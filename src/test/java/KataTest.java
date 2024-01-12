@@ -30,4 +30,10 @@ public class KataTest {
     public void allYearsDivisibleBy4ButNotBy100AreLeapYears(int input) {
         Assertions.assertTrue(Kata.isLeapYear(input));
     }
+
+    @ParameterizedTest
+    @ValueSource(ints = {2017, 2018, 2019})
+    public void allYearsNotDivisibleBy4AreNotLeapYears(int input) {
+        Assertions.assertFalse(Kata.isLeapYear(input));
+    }
 }

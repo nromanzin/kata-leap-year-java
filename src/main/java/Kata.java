@@ -4,9 +4,13 @@ public class Kata {
     }
 
     public static boolean isLeapYear(int input) {
-        return isDivisibleBy(input, 400)
-            || !(isDivisibleBy(input, 100) && !isDivisibleBy(input, 400))
-            || (isDivisibleBy(input, 4) && !isDivisibleBy(input, 100));
+        if (isDivisibleBy(input, 400)) {
+            return true;
+        }
+        if (isDivisibleBy(input, 100)) {
+            return false;
+        }
+        return isDivisibleBy(input, 4);
     }
 
     private static boolean isDivisibleBy(int input, int divider) {
